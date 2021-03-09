@@ -10,7 +10,7 @@
 #include <unordered_map>
 #include <atomic>
 #include "SensorFusion.cpp"
-#include "JoyShock.cpp"
+#include "jscontroller/JoyShock.cpp"
 #include "InputHelpers.cpp"
 
 std::shared_timed_mutex _callbackLock;

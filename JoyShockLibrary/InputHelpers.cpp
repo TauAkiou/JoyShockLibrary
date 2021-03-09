@@ -1,5 +1,5 @@
 #include "JoyShockLibrary.h"
-#include "JoyShock.cpp"
+#include "jscontroller/JoyShock.cpp"
 
 #include <cmath>
 
