@@ -44,7 +44,7 @@ bool JSDualSense::ActivateControllerBluetooth() {
     hid_read_timeout(handle, buffer, 64, 100);
     hid_read_timeout(handle, buffer, 64, 100);
 
-    return buffer[0] != 0x31;
+    return buffer[0] != 0x31; // If the controller has switched to 0x31 packets, we are using bluetooth.
 }
 
 void JSDualSense::_hidSetFeatureReport() {
@@ -60,7 +60,7 @@ int JSDualSense::PollDeviceState() {
     try {
         bytes_read = hid_read_timeout(handle, Buffer, 100, 1000);
         if(!bytes_read) {
-            throw new ControllerTimeout;
+            throw new ControllerTimeout(jsl_handle);
         }
     }
     catch(ControllerTimeout &excpt) {

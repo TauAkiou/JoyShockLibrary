@@ -277,10 +277,11 @@ class JSDualSense : JoyShockController {
     ReportFeatureInCalibrateBT _hidGetCalibrationInfo();
     void _hidSetFeatureReport();
     bool ActivateControllerBluetooth();
-    int PollDeviceState() override;
 
     public:
     JSDualSense(struct hid_device_info *dev, int uniqueHandle);
+    int PollDeviceState() override;
+
 
 };
 
